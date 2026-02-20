@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "athena-tool"
+version = "0.1.0"
+description = "AWS Athena query tool with AI assistance"
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.10"
+boto3 = "^1.35"
+pyarrow = "^18.0"
+botocore = {extras = ["crt"], version = "^1.42.50"}
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

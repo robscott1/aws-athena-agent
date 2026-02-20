@@ -1,0 +1,31 @@
+# Schema Reference
+#
+# This is a living document. When you encounter a new table, run DESCRIBE on it
+# and append the schema here. Each table is preceded by -->.
+#
+# Format:
+#   --> database.table_name
+#   column_name    data_type    description
+
+--> telemetry.api_requests
+account_id        string    account the request belongs to
+user_id           string    user who made the request
+method            string    HTTP method (GET, POST, etc.)
+endpoint          string    API endpoint path
+status_code       bigint    HTTP response status code
+response_time_ms  bigint    response time in milliseconds
+ip_address        string    client IP address
+user_agent        string    client user agent string
+timestamp         string    request timestamp
+dt                string    partition key (YYYY-MM-DD)
+
+--> telemetry.error_logs
+request_id        string    linked API request ID
+account_id        string    account the error belongs to
+user_id           string    user who triggered the error
+error_type        string    error category/type
+message           string    error message text
+endpoint          string    API endpoint that errored
+ip_address        string    client IP address
+timestamp         string    error timestamp
+dt                string    partition key (YYYY-MM-DD)
