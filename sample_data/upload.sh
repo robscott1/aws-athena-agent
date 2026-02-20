@@ -5,12 +5,12 @@
 #   ./sample_data/upload.sh [s3-bucket-path] [database] [aws-profile]
 #
 # Defaults:
-#   S3_BUCKET: s3://athena-query-tool-bucket-091345
+#   S3_BUCKET: s3://your-athena-results-bucket
 #   DATABASE:  telemetry
 
 set -euo pipefail
 
-S3_BUCKET="${1:-s3://athena-query-tool-bucket-091345}"
+S3_BUCKET="${1:-s3://your-athena-results-bucket}"
 DATABASE="${2:-telemetry}"
 AWS_PROFILE="${3:-}"
 
